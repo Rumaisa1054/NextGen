@@ -40,7 +40,7 @@ def main():
 
         json_string = model_prediction.outputs[0].data.text.raw
         #history = st.text_input("Enter your History" , value = "Back in 2020, I was diagnosed with diabetes. It all started with feeling tired and always needing a drink. My body was like a confused traffic cop with the sugar levels. The doctor said it was Type 2 diabetes, so I had to change my food game.")
-        history = st.text_input("Enter your History")
+        history = st.text_area("Enter your History")
         if st.button("Submit"):
             ######################################################################################################
             # In this section, we set the user authentication, user and app ID, model details, and the URL of
