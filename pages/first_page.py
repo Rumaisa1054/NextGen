@@ -18,7 +18,8 @@ st.title("Clarifai NextGen Nexus App")
 
 def main():
 
-    IMAGE_URL = st.text_input("Paste an image URL to get Started" , value = "https://th.bing.com/th/id/R.41505c0285b04412ab6351a9ec5543c0?rik=ZbtgOlw1vTPJOw&pid=ImgRaw&r=0")
+    #IMAGE_URL = st.text_input("Paste an image URL to get Started" , value = "https://th.bing.com/th/id/R.41505c0285b04412ab6351a9ec5543c0?rik=ZbtgOlw1vTPJOw&pid=ImgRaw&r=0")
+    IMAGE_URL = st.text_input("Paste an image URL to get Started")
     with st.sidebar:
         #Clarifai credentials
         st.subheader( "Add your clarifai pat")
@@ -38,8 +39,8 @@ def main():
             inference_params=inference_params)
 
         json_string = model_prediction.outputs[0].data.text.raw
-        history = st.text_input("Enter your History" , value = "Back in 2020, I was diagnosed with diabetes. It all started with feeling tired and always needing a drink. My body was like a confused traffic cop with the sugar levels. The doctor said it was Type 2 diabetes, so I had to change my food game.")
-
+        #history = st.text_input("Enter your History" , value = "Back in 2020, I was diagnosed with diabetes. It all started with feeling tired and always needing a drink. My body was like a confused traffic cop with the sugar levels. The doctor said it was Type 2 diabetes, so I had to change my food game.")
+        history = st.text_input("Enter your History")
         ######################################################################################################
         # In this section, we set the user authentication, user and app ID, model details, and the URL of
         # the text we want as an input. Change these strings to run your own example.
@@ -112,7 +113,8 @@ def main():
         #ans = "Since my Type 2 diabetes diagnosis in 2020, I've made some serious changes to my diet. I cut down on the sugary stuff and started loading up on veggies, lean proteins, and whole grains. The sweet treats are a rare sight now, and I've become best friends with my plate of greens. Ever since tweaking my diet, my energy levels have perked up, and the unquenchable thirst has eased up a lot. It's like my body's found a new rhythm, and I'm not constantly feeling like I'm running on empty. The change has been refreshing, and I'm learning to navigate this healthier path."
         #print("Answer : ")
         #print(ans)
-        ans = st.text_input("Answer these questions" + Q, value="Since my Type 2 diabetes diagnosis in 2020, I've made some serious changes to my diet. I cut down on the sugary stuff and started loading up on veggies, lean proteins, and whole grains. The sweet treats are a rare sight now, and I've become best friends with my plate of greens. Ever since tweaking my diet, my energy levels have perked up, and the unquenchable thirst has eased up a lot. It's like my body's found a new rhythm, and I'm not constantly feeling like I'm running on empty. The change has been refreshing, and I'm learning to navigate this healthier path.")
+        #ans = st.text_input("Answer these questions" + Q, value="Since my Type 2 diabetes diagnosis in 2020, I've made some serious changes to my diet. I cut down on the sugary stuff and started loading up on veggies, lean proteins, and whole grains. The sweet treats are a rare sight now, and I've become best friends with my plate of greens. Ever since tweaking my diet, my energy levels have perked up, and the unquenchable thirst has eased up a lot. It's like my body's found a new rhythm, and I'm not constantly feeling like I'm running on empty. The change has been refreshing, and I'm learning to navigate this healthier path.")
+        ans = st.text_input("Answer these questions : ")
         prompt = f"You are an experienced doctor. Given a patient with History : {history + ans} , Make a strict Suggestion on whether He/she can eat a food Item with nutritional information given : {json_string} or he should striclty avoid eating it"
 
         ######################################################################################################
