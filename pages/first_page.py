@@ -18,8 +18,8 @@ st.title("Clarifai NextGen Nexus App")
 
 def main():
 
-    #IMAGE_URL = st.text_input("Paste an image URL to get Started" , value = "https://th.bing.com/th/id/R.41505c0285b04412ab6351a9ec5543c0?rik=ZbtgOlw1vTPJOw&pid=ImgRaw&r=0")
-    IMAGE_URL = st.text_input("Paste an image URL to get Started")
+    IMAGE_URL = st.text_input("Paste an image URL to get Started" , value = "https://th.bing.com/th/id/R.41505c0285b04412ab6351a9ec5543c0?rik=ZbtgOlw1vTPJOw&pid=ImgRaw&r=0")
+    
     with st.sidebar:
         #Clarifai credentials
         st.subheader( "Add your clarifai pat")
@@ -39,8 +39,8 @@ def main():
             inference_params=inference_params)
 
         json_string = model_prediction.outputs[0].data.text.raw
-        #history = st.text_input("Enter your History" , value = "Back in 2020, I was diagnosed with diabetes. It all started with feeling tired and always needing a drink. My body was like a confused traffic cop with the sugar levels. The doctor said it was Type 2 diabetes, so I had to change my food game.")
-        history = st.text_input("Enter your History")
+        history = st.text_input("Enter your History" , value = "Back in 2020, I was diagnosed with diabetes. It all started with feeling tired and always needing a drink. My body was like a confused traffic cop with the sugar levels. The doctor said it was Type 2 diabetes, so I had to change my food game.")
+        
         ######################################################################################################
         # In this section, we set the user authentication, user and app ID, model details, and the URL of
         # the text we want as an input. Change these strings to run your own example.
