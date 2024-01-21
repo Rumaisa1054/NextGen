@@ -109,11 +109,11 @@ def main():
             ss = "Answer these questions : " + Q
             ans = st.text_area(ss)
             #ans = st.text_area("Answer these questions : ")
+            st.title("Patient History : ")
+            st.text(history + "\n" + ans)
+            st.title("Food Nutritional Info : ")
+            st.text(json_string)
             if st.button('Answer'):
-                st.title("Patient History : ")
-                st.text(history + "\n" + ans)
-                st.title("Food Nutritional Info : ")
-                st.text(json_string)
                 promptt = f"You are an experienced doctor. Given a patient with History : {history + ans} , Make a strict Suggestion on whether He/she can eat a food Item with nutritional information given : {json_string} or he should striclty avoid eating it"
                 ######################################################################################################
                 # In this section, we set the user authentication, user and app ID, model details, and the URL of
