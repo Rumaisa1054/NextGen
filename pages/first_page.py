@@ -107,7 +107,7 @@ def main():
             output = post_model_outputs_response.outputs[0]
             Q = output.data.text.raw
             ss = "Answer these questions : " + Q
-            ans = st.text_input(ss, value="Since my Type 2 diabetes diagnosis in 2020, I've made some serious changes to my diet. I cut down on the sugary stuff and started loading up on veggies, lean proteins, and whole grains. The sweet treats are a rare sight now, and I've become best friends with my plate of greens. Ever since tweaking my diet, my energy levels have perked up, and the unquenchable thirst has eased up a lot. It's like my body's found a new rhythm, and I'm not constantly feeling like I'm running on empty. The change has been refreshing, and I'm learning to navigate this healthier path.")
+            ans = st.text_area(ss)
             #ans = st.text_input("Answer these questions : ")
             if st.button("Submit-Answer"):
                 st.title("Patient History : ")
